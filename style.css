@@ -1,0 +1,555 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    cursor: url('cursor.png') 20 20, auto;
+    overflow-x: hidden;
+    background-image: url('books.jpg'); /* Add your image path */
+    background-size: cover; /* Ensure the image covers the whole background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-color: transparent;
+    color: rgba(197, 197, 197, 0.85);  /* A warm text color for better readability */
+}
+
+
+/* Home Section Styling */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem; /* Reduced for better balance */
+    min-height: 100vh;
+    padding: 5rem 10%;
+    text-align: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(31, 24, 16, 0.9));
+}
+
+/* Home Text Content */
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: rgba(126, 93, 26, 0.61);
+}
+
+.home-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Circular Image Styling */
+.home-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 20px rgba(201, 147, 40, 0.6);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Image Inside Circle */
+.home-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect for Glow & Zoom */
+.home-img:hover {
+    box-shadow: 0 0 30px rgba(201, 147, 40, 0.8);
+}
+
+.home-img:hover img {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 884px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+        padding: 3rem 5%;
+    }
+
+    .home-content h1 {
+        font-size: 2.4rem;
+    }
+
+    .home-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .home-content p {
+        font-size: 1rem;
+    }
+}
+
+.content h1{
+    font-size: clamp(1rem, 2rem + 5vw, 3rem);
+}
+
+.content h1 span{
+    color: rgb(51, 45, 32);
+    text-shadow: 0 0 10px rgb(192, 187, 179);
+}
+
+.content .typewriter{
+    font-weight: 600;
+    font-size: clamp(1rem, 1rem + 5vw, 2rem);
+}
+
+.content .typewriter span{
+    color: rgb(43, 36, 25);
+    font-size: 2.5rem;
+    text-shadow: 0 0 5px rgb(175, 151, 112);
+    position: relative;
+    transition: 0.3s linear;
+}
+
+.typewriter span::before{
+    content: "Writer";
+    animation: words 15s infinite;
+}
+
+.typewriter span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    animation:  cursor 0.6s linear infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 3px solid hsla(46, 50%, 52%, 0.685);
+    }
+}
+
+.typewriter span::after {
+    height: 3.3%;
+}
+@keyframes words {
+    0%, 33%{
+        content: "Writer";
+    }
+    34%, 66%{
+        content: "Poet";
+    }
+    67%, 100%{
+        content: "Songwriter";
+    }
+}
+
+
+/* Navbar Styling */
+nav {
+    width: 100%;
+    height: 12vh; /* Ensure the navbar has a defined height */
+    position: sticky;
+    top: 0;
+    background: rgba(34, 34, 34, 0.9); /* Dark brownish-black color */
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: 0.3s ease-in-out;
+    /* Add box-shadow for better visibility */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#about {
+    padding: 100px 10%;
+    background: rgb(29, 27, 26, 0.8);  /* A dark brown background */
+}
+
+#books {
+    padding: 100px 10%;
+    background: rgb(29, 27, 26, 0.8);  /* A dark brown background */
+}
+
+#literary-works {
+    padding: 100px 10%;
+    background: rgb(29, 27, 26, 0.8);  /* A dark brown background */
+}
+
+#playlists {
+    padding: 100px 10%;
+    background-image: url('background.jpg'); /* Add your image path */   
+}
+
+#contact {
+    padding: 100px 10%;
+    background: rgb(29, 27, 26);  
+}
+
+
+
+
+
+.nav-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    color: rgb(110, 81, 38);
+    font-size: 2rem;
+    font-weight: bolder;
+    line-height: 5vh;
+    max-width: 100%; /* Ensure the logo text stays within the navbar */
+    overflow: hidden; /* Hide any overflow text */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+#logo {
+    width: 70px;  /* Set a fixed width */
+    height: auto; /* Set a fixed height */
+    object-fit: contain; /* Ensures the entire image fits within the given dimensions */
+}
+
+
+.logo span {
+    color: rgba(250, 228, 184, 0.541);
+    text-shadow: 0 0 10px rgb(167, 139, 85);
+    font-size: 2rem;
+    position: relative;
+    top: -2.5rem;
+}
+
+.hamburg, .cancel {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    font-size: 2rem;
+    display: none;
+}
+
+/* Navigation Links */
+.nav-container .links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-container .links a {
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-container .links a::before {
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: rgb(201, 147, 40);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-container .links a:hover::before {
+    width: 100%;
+}
+
+.nav-container .contact-btn {
+    background-color: transparent;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 2px solid rgb(201, 147, 40);
+    transition: 0.3s ease-in-out;
+}
+
+.nav-container .contact-btn a {
+    color: white;
+}
+
+.nav-container .contact-btn:hover {
+    background-color: rgb(201, 147, 40);
+}
+
+.nav-container .contact-btn:hover a {
+    color: black;
+}
+
+.nav-container .links a:hover {
+    color: rgb(201, 147, 40);
+}
+
+/* Section Styling */
+section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 10%;
+    margin-bottom: 50px;
+    padding: 30px 5%;
+}
+
+
+#about, #books, #literary-works, #playlists, #contact {
+    padding: 100px 10%;
+}
+
+/* Books Section */
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.book img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.book p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.book a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgb(151, 125, 72);
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.book a:hover {
+    background: white;
+    color: rgb(201, 147, 40);
+}
+
+/* Playlists Section */
+#playlists {
+    text-align: center;
+}
+
+#playlists iframe {
+    margin: 15px;
+    border-radius: 10px;
+}
+
+/* Contact Section */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-link i {
+    font-size: 1.5rem;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+    color: rgb(201, 147, 40);
+}
+
+#books h2 {
+    display: inline-block; /* Makes it behave like a button */
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(201, 147, 40, 0.9); /* Gold color */
+    border: 2px solid rgba(201, 147, 40, 0.9); /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center;
+    background: transparent; /* No background */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(201, 147, 40, 0.5); /* Glow effect */
+    margin: 20px auto; /* Centers it */
+}
+
+#about h2 {
+    display: inline-block; /* Makes it behave like a button */
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(201, 147, 40, 0.9); /* Gold color */
+    border: 2px solid rgba(201, 147, 40, 0.9); /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center;
+    background: transparent; /* No background */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(201, 147, 40, 0.5); /* Glow effect */
+    margin: 20px auto; /* Centers it */
+}
+
+#literary-works h2 {
+    display: inline-block; /* Makes it behave like a button */
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(201, 147, 40, 0.9); /* Gold color */
+    border: 2px solid rgba(201, 147, 40, 0.9); /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center;
+    background: transparent; /* No background */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(201, 147, 40, 0.5); /* Glow effect */
+    margin: 20px auto; /* Centers it */}
+
+.poem {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#playlists h2 {
+    display: inline-block; /* Makes it behave like a button */
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(201, 147, 40, 0.9); /* Gold color */
+    border: 2px solid rgba(201, 147, 40, 0.9); /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center;
+    background: transparent; /* No background */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(201, 147, 40, 0.5); /* Glow effect */
+    margin: 20px auto; /* Centers it */
+}
+
+#contact h2 {
+    position: relative;
+    display: block; /* Ensures it takes full width */
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgba(250, 228, 184, 0.9); /* Warm golden color */
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto; /* Centers it */
+    width: fit-content; /* Ensures it's only as wide as the text */
+    padding-bottom: 10px; /* Space between text and underline */
+}
+
+/* Permanent Underline */
+#contact h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: rgba(250, 228, 184, 0.9); /* Same golden color */
+}
+
+button {
+    position: fixed;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+#scrollTopBtn {
+    bottom: 60px; /* Position it above the bottom button */
+}
+
+#scrollBottomBtn {
+    bottom: 20px;
+}
+
+#contact {
+    padding: 30px 5%;
+    background: rgb(29, 27, 26);  
+    min-height: auto;
+    height: auto;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 884px) {
+    body {
+        overflow-y: visible;
+    }
+    nav .logo {
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+    .nav-container .links {
+        display: none;
+    }
+    .hamburg, .cancel {
+        display: block;
+    }
+    .main-container .content {
+        width: 80%;
+    }
+    .cancel {
+        color: white;
+    }
+}
